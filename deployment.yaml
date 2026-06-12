@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hariprasad-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hariprasad-app
+  template:
+    metadata:
+      labels:
+        app: hariprasad-app
+    spec:
+      containers:
+      - name: hariprasad-app
+        image: <your-registry>/hariprasad-app:1  
+        ports:
+        - containerPort: 8080
