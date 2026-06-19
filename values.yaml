@@ -1,0 +1,28 @@
+# ── Image ────────────────────────────────────────────────────
+image:
+  repository: 835505308472.dkr.ecr.ap-south-1.amazonaws.com/hariprasad-app
+  tag: "1"              
+  pullPolicy: Always
+replicaCount: 2
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8080
+
+ingress:
+  enabled: true
+  host: hariprasad.yourdomain.com
+
+resources:
+  requests:
+    memory: "256Mi"
+    cpu: "250m"
+  limits:
+    memory: "512Mi"
+    cpu: "500m"
+
+healthCheck:
+  path: /actuator/health
+  initialDelaySeconds: 15
+  periodSeconds: 10
