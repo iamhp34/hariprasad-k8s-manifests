@@ -1,0 +1,6 @@
+apiVersion: v2
+name: hariprasad-app
+description: Hariprasad Spring Boot App
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
