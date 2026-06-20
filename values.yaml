@@ -1,18 +1,18 @@
-# ── Image ────────────────────────────────────────────────────
 image:
   repository: 835505308472.dkr.ecr.ap-south-1.amazonaws.com/hariprasad-app
-  tag: "1"              
+  tag: "1"
   pullPolicy: Always
+
 replicaCount: 2
 
 service:
-  type: ClusterIP
+  type: NodePort        # changed from ClusterIP
   port: 80
   targetPort: 8080
+  nodePort: 30080       # access via this port
 
 ingress:
-  enabled: true
-  host: hariprasad.yourdomain.com
+  enabled: false        # disable ingress — no domain needed
 
 resources:
   requests:
