@@ -1,6 +1,6 @@
 image:
   repository: 835505308472.dkr.ecr.ap-south-1.amazonaws.com/hariprasad-app
-  tag: "1"
+  tag: "43"
   pullPolicy: Always
 
 replicaCount: 2
