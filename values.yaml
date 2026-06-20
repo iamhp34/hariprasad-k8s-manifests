@@ -9,7 +9,6 @@ service:
   type: NodePort        # changed from ClusterIP
   port: 80
   targetPort: 8080
-  nodePort: 30080       # access via this port
 
 ingress:
   enabled: false        # disable ingress — no domain needed
