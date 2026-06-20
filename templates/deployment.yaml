@@ -19,6 +19,8 @@ spec:
       labels:
         app: {{ .Release.Name }}
     spec:
+      imagePullSecrets:
+      - name: ecr-pull-secret
       containers:
       - name: {{ .Release.Name }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
@@ -44,3 +46,4 @@ spec:
             port: {{ .Values.service.targetPort }}
           initialDelaySeconds: 30
           periodSeconds: 20
+          
